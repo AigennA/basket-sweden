@@ -1,0 +1,218 @@
+/* Nollställer marginaler och padding för alla element och gör layouten mer förutsägbar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grundläggande styling för body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #eceaf7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styling för sidhuvudet */
+header {
+    background-color: #1a237e;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+    padding: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+/* Layout för navigationsmenyn */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Huvudinnehållets container */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Sid-specifika bakgrundsfärger */
+#hem {
+    background-color: #afdcec;
+}
+
+#lag {
+    background-color: #3cb544;
+}
+
+/* Intro- och Om Basket-sektioner */
+.intro,
+.about {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Styling för punktlista i Om Basket */
+.about ul {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding-left: 1.5rem;
+    list-style-position: inside; /* gör att punkterna ligger nära texten */
+}
+
+.about li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Styling för stycken i Om Basket */
+.about p {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+/* Layout för featured-sektion med två kolumner */
+.featured {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.left-column {
+    flex: 2 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.right-column {
+    flex: 1 1 300px;
+}
+
+/* Styling för featured-artiklar */
+.featured article {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Bildstil för featured-innehåll */
+.feature-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Layout för lagkort i grid */
+.team-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Styling för individuella lagkort */
+.team-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Bildstil för lagkort */
+.team-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Layout för tävlingssektion */
+.games {
+    margin-top: 3rem;
+}
+
+.games h2 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* Styling för tävlingslista */
+.games ul {
+    list-style: none;
+    padding: 0;
+}
+
+.games li {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styling för sidfot */
+footer {
+    background-color: rgb(67, 67, 64);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* Responsiva justeringar för små skärmar */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        flex: 1 1 100%;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
