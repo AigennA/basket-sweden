@@ -194,9 +194,10 @@ footer {
 /* Responsiva justeringar för små skärmar */
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+       flex-direction: row;
+       flex-wrap: wrap;
+      justify-content: center;
+       gap: 0.5rem;
     }
 
     .team-grid {
@@ -214,5 +215,28 @@ footer {
 
     main {
         padding: 1rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    header nav ul {
+        flex-direction: row; /* keep links side by side */
+        flex-wrap: wrap; /* allow wrapping if screen too small */
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0;
+        width: auto;
+    }
+
+    header nav li a {
+        display: inline-block; /* no full width */
+        text-align: center;
+        padding: 0.5rem 0.8rem;
     }
 }
